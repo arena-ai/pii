@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pii_removal"
+version = "0.0.1"
+description = "PII Removal package"
+authors = [
+    {name = "Sarus"}
+]
+classifiers =[
+    "Programming Language :: Python :: 3.9",
+]
+readme = "README.md"
+license = {text= "PRIVATE"}
+requires-python = ">=3.8"
+
+dependencies = [
+    "transformers[torch]",
+    "tldextract",
+    "phonenumbers"
+]
+
+[tool.setuptools.packages.find]
+exclude = ['tests', 'examples']
+include = ['presidio_analyzer']
+
+[project.optional-dependencies]
+server = [
+    "flask>=1.1",
+    "spacy_huggingface_pipelines",
+    "stanza",
+    "spacy_stanza",
+]
+
+evaluator = [
+    "pandas",
+    "datasets",
+    "evaluate[evaluator]",
+    "seqeval"
+]
+
+dev = [
+    "ruff",
+    "pytest",
+    "fire",
+    "rich"
+]

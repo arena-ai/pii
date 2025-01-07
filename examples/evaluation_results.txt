@@ -1,0 +1,35 @@
+conll2003
+                                         model  precision    recall        f1  number
+0                          dslim/bert-base-NER   0.958194  0.976150  0.967089     587
+1  xlm-roberta-large-finetuned-conll03-english   0.974662  0.982964  0.978796     587
+2       Babelscape/wikineural-multilingual-ner   0.963028  0.931857  0.947186     587
+wn_de
+                                         model  precision    recall        f1  number
+0                          dslim/bert-base-NER   0.608696  0.907950  0.728799     478
+1  xlm-roberta-large-finetuned-conll03-english   0.943434  0.976987  0.959918     478
+2       Babelscape/wikineural-multilingual-ner   0.997904  0.995816  0.996859     478
+wn_en
+                                         model  precision    recall        f1  number
+0                          dslim/bert-base-NER   0.917051  0.927739  0.922364     429
+1  xlm-roberta-large-finetuned-conll03-english   0.933025  0.941725  0.937355     429
+2       Babelscape/wikineural-multilingual-ner   0.980998  0.962704  0.971765     429
+wn_es
+                                         model  precision    recall        f1  number
+0                          dslim/bert-base-NER   0.814118  0.910526  0.859627     380
+1  xlm-roberta-large-finetuned-conll03-english   0.956853  0.992105  0.974160     380
+2       Babelscape/wikineural-multilingual-ner   0.994737  0.994737  0.994737     380
+wn_fr
+                                         model  precision    recall        f1  number
+0                          dslim/bert-base-NER   0.783871  0.927481  0.849650     524
+1  xlm-roberta-large-finetuned-conll03-english   0.950276  0.984733  0.967198     524
+2       Babelscape/wikineural-multilingual-ner   0.990440  0.988550  0.989494     524
+wn_it
+                                         model  precision    recall        f1  number
+0                          dslim/bert-base-NER   0.753695  0.816000  0.783611     750
+1  xlm-roberta-large-finetuned-conll03-english   0.941022  0.957333  0.949108     750
+2       Babelscape/wikineural-multilingual-ner   0.982503  0.973333  0.977897     750
+
+ai4privacy
+                                    model  precision    recall        f1  number
+0                     dslim/bert-base-NER   0.010753  0.002991  0.004680    1003
+1  Babelscape/wikineural-multilingual-ner   0.013043  0.002991  0.004866    1003
