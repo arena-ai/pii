@@ -4,11 +4,6 @@ on:
   push:
     branches:
       - main
-      - build_from_github
-    paths:
-      - 'Dockerfile'
-      - 'tests/**'
-      - '.github/workflows/**'
   workflow_dispatch: # Manual trigger
 
 env:
@@ -88,7 +83,10 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
+      
+      - name: List Files in Repository
+        run: ls -R  # Debug: Verify file structure
+      
       - name: Pull and Test Docker Image
         run: |
           docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
