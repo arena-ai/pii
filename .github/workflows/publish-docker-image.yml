@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - build_from_github
   workflow_dispatch: # Manual trigger
 
 env:
