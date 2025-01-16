@@ -26,10 +26,10 @@ RUN apt-get update && apt-get install -y build-essential curl
 
 # next line is required to install the CPU version of Torch and not the GPU one, see
 # https://pytorch.org/get-started/locally/
-RUN pip install torch --index-url https://download.pytorch.org/whl/cpu
 RUN pip install uv==0.2.2
 ENV VIRTUAL_ENV=/usr/local
 RUN uv pip sync requirements.txt --python=/usr/local/bin/python  && uv cache clean
+RUN pip install torch --index-url https://download.pytorch.org/whl/cpu
 
 COPY . .
 
