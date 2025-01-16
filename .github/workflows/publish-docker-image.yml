@@ -1,11 +1,7 @@
 name: Build and Publish Presidio Analyzer Docker Image 🐳
 
 on:
-  push:
-    branches:
-      - main
-      - build_from_github
-  workflow_dispatch: # Manual trigger
+  workflow_dispatch:  # Manual trigger only
 
 env:
   REGISTRY: ghcr.io
@@ -41,8 +37,6 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=sha
-            type=ref,event=branch
             type=raw,value=latest
 
       - name: Build and Push Docker Image
@@ -69,6 +63,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+
       - name: Set up Docker
         uses: docker/setup-buildx-action@v2
 
@@ -87,7 +87,7 @@ jobs:
       
       - name: List Files in Repository
         run: ls -R  # Debug: Verify file structure
-      
+
       - name: Pull and Test Docker Image
         run: |
           docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
