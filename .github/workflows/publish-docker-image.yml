@@ -1,6 +1,10 @@
 name: Build and Publish Presidio Analyzer Docker Image 🐳
 
 on:
+  push:
+    branches:
+      - main
+      - build_from_github
   workflow_dispatch:  # Manual trigger only
 
 env:
